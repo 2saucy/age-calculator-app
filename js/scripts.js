@@ -6,6 +6,11 @@ const monthOutput = document.getElementById("MM");
 const yearOutput = document.getElementById("YY");
 const form = document.querySelector("form");
 
+const lightRed = "hsl(0, 100%, 67%)";
+const lightGray = "hsl(0, 0%, 86%)";
+const smokeyGrey = "hsl(0, 1%, 44%)"
+
+
 const date = new Date();
 let curDay = date.getDate();
 let curMonth = 1 + date.getMonth();
@@ -13,8 +18,9 @@ let curYear = date.getFullYear();
 
 const monthsDays = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
 
-const warning = (target, color, text) => {
-  target.style.borderColor = color;
+const warning = (target, colorInp, colorLabel, text) => {
+  target.style.borderColor = colorInp;
+  target.parentElement.querySelector("label").style.color= colorLabel;
   target.parentElement.querySelector("small").innerText = text;
 };
 
@@ -24,19 +30,19 @@ const validate = () => {
 
   inputs.forEach((input) => {
     if (!input.value) {
-      warning(input, "red", "This field is required.");
+      warning(input, lightRed, lightRed, "This field is required.");
       validator = false;
     } else if (dayInput.value > 31) {
-      warning(dayInput, "red", "Must be a valid day");
+      warning(dayInput, lightRed, lightRed, "Must be a valid day");
       validator = false;
     } else if (monthInput.value > 12) {
-      warning(monthInput, "red", "Must be a valid month");
+      warning(monthInput, lightRed, lightRed, "Must be a valid month");
       validator = false;
     } else if (yearInput.value > year) {
-      warning(yearInput, "red", "Must be a valid month");
+      warning(yearInput, lightRed, lightRed, "Must be a valid month");
       validator = false;
     } else {
-      warning(input, "lightgray", "");
+      warning(input, lightGray, smokeyGrey, "");
       validator = true;
     }
   });

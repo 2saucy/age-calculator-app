@@ -1,113 +1,135 @@
-/* Fonts Imports */
-@font-face {
-  font-family: "Poppins";
-  src: url("/assets/fonts/Poppins-Regular.ttf");
-}
-@font-face {
-  font-family: "Poppins I";
-  src: url("/assets/fonts/Poppins-Italic.ttf");
-}
-@font-face {
-  font-family: "Poppins B";
-  src: url("/assets/fonts/Poppins-Bold.ttf");
-}
-@font-face {
-  font-family: "Poppins BI";
-  src: url("/assets/fonts/Poppins-BoldItalic.ttf");
-}
-@font-face {
-  font-family: "Poppins EB";
-  src: url("/assets/fonts/Poppins-ExtraBold.ttf");
-}
-@font-face {
-  font-family: "Poppins EBI";
-  src: url("/assets/fonts/Poppins-ExtraBoldItalic.ttf");
-}
+
 
 * {
+  font-family: "Poppins", sans-serif;
   box-sizing: border-box;
   padding: 0;
   margin: 0;
 }
+
 body {
+  background-color: hsl(0, 0%, 94%);
   height: 100vh;
   width: 100%;
-  background-color: rgb(234, 234, 234);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
+
 .card {
+  background-color: hsl(0, 0%, 100%);
   width: 600px;
-  background-color: rgb(255, 255, 255);
   border-radius: 1.5rem 1.5rem 10rem 1.5rem;
 }
+
 .container {
   display: flex;
   flex-direction: column;
   padding: 2rem;
 }
 
-/* Form */
 form {
   display: flex;
   flex-direction: column;
 }
+
 .form-container {
   display: flex;
   gap: 1.5rem;
 }
+
 .block {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  font-family: "Poppins EB";
 }
+
 .block label {
-  color: rgba(58, 58, 58, 0.504);
-  font-size: 12px;
-  letter-spacing: 2px;
+  color: hsl(0, 1%, 44%);
+  font-weight: 700;
 }
+
 .block input {
   width: 100px;
   padding: 10px 20px;
+  border: hsl(0, 0%, 86%) solid 1px;
   border-radius: 5px;
-  border: lightgray solid 1px;
   font-size: larger;
-  font-family: "Poppins B";
+  font-weight: bold;
 }
+
 .submit-block {
   display: flex;
   align-items: center;
 }
+
 .submit-block hr {
   width: 100%;
 }
+
 .submit-btn {
+  background-color: hsl(259, 100%, 65%);
+  border: none;
   border-radius: 50%;
   padding: 1rem;
-  background-color: rgb(127, 55, 243);
-  border: none;
 }
+
 .submit-btn:hover {
-  background-color: black;
+  background-color: hsl(0, 0%, 8%);
 }
 
-/* Warning */
 small {
-  font-family: "Poppins I";
-  font-size: 10px;
-  color: red;
+  color: hsl(0, 100%, 67%);
+  font-style: italic;
+  font-weight: 400;
+  font-size: 12px;
 }
 
-/* Output */
 .output h1 {
-  font-family: "Poppins EBI";
+  color: hsl(0, 0%, 8%);
+  font-style: italic;
+  font-weight: 800;
   font-size: 5rem;
 }
+
 .output span {
-  color: rgb(127, 55, 243);
+  color: hsl(259, 100%, 65%);
   padding-right: 1rem;
 }
 
+
+@media screen and (max-width: 640px) {
+    .card{
+     max-width: 350px;
+     padding: 2rem 0px;
+    }
+
+    form{
+        gap:20px;
+    }
+
+    .form-container{
+        justify-content: center;
+    }
+
+    .block input{
+        width: 80px;
+    }
+
+    .submit-block{
+        margin: 3rem 0px;
+        position: relative;
+    }
+    
+    .submit-btn{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    
+    .output h1{
+        font-size: 60px;
+    }
+}
