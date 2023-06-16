@@ -16,7 +16,6 @@ let curDay = date.getDate();
 let curMonth = 1 + date.getMonth();
 let curYear = date.getFullYear();
 
-const hello = ""
 const monthsDays = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
 
 const validateInput = (input, maxValue , minValue, message) => {
