@@ -16,6 +16,7 @@ let curDay = date.getDate();
 let curMonth = 1 + date.getMonth();
 let curYear = date.getFullYear();
 
+const hello = ""
 const monthsDays = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
 
 const validateInput = (input, maxValue , minValue, message) => {
@@ -46,7 +47,7 @@ const validate = () => {
 
   inputs.forEach((input) => {
       if (input.id === "day") {
-        validateDay = validateInput(input, 31, 1, "Must be a valid day");
+        validateDay = validateInput(input, monthsDays[monthInput.value-1], 1, "Must be a valid day");
       }
       if (input.id === "month") {
         validateMonth = validateInput(input, 12, 1, "Must be a valid month");
@@ -83,8 +84,6 @@ const ageCalculator = (b) => {
 
 const handleSubmit = (e) => {
   e.preventDefault();
-
-  console.log(validate())
 
   if (validate()) {
     const birthdate = {
